@@ -90,10 +90,10 @@
         <div class="flex gap-4 pt-2">
           <!-- Email -->
           <a
-            href="mailto:contacto@tupurificadora.com"
+            href="mailto:nubawater@gmail.com"
             class="w-10 h-10 rounded bg-slate-800 hover:bg-slate-600 flex items-center justify-center text-white transition-colors"
             aria-label="Correo de Contacto"
-            title="contacto@tupurificadora.com"
+            title="nubawater@gmail.com"
           >
             <svg
               class="w-5 h-5"

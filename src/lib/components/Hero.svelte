@@ -1,33 +1,4 @@
-<script>
-  import { onMount } from "svelte";
 
-  // Control de Video en bucle cinemático
-  const videos = ["/Video1.mp4", "/Video2.mp4"];
-  let activeIndex = $state(0);
-  /** @type {HTMLVideoElement | undefined} */
-  let v1_el;
-  /** @type {HTMLVideoElement | undefined} */
-  let v2_el;
-
-  const handleEnded1 = () => {
-    activeIndex = 1;
-    if (v2_el) {
-      v2_el.currentTime = 0;
-      v2_el.play().catch(() => {});
-    }
-  };
-  const handleEnded2 = () => {
-    activeIndex = 0;
-    if (v1_el) {
-      v1_el.currentTime = 0;
-      v1_el.play().catch(() => {});
-    }
-  };
-
-  onMount(() => {
-    if (v1_el) v1_el.play().catch(() => {});
-  });
-</script>
 
 <section
   id="hero"
@@ -35,10 +6,10 @@
 >
   <!-- LEFT CONTENT SIDE -->
   <div
-    class="relative w-full md:w-[50%] lg:w-[45%] min-h-[60vh] md:min-h-screen flex flex-col justify-center px-8 sm:px-16 lg:px-24 xl:pl-40 pt-32 pb-20 z-10 bg-white"
+    class="relative w-full md:w-[50%] lg:w-[45%] min-h-[60vh] md:min-h-screen flex flex-col justify-center px-8 sm:px-12 lg:px-20 xl:pl-32 pt-32 pb-32 z-10 bg-white"
   >
     <!-- Central Text -->
-    <div class="space-y-8 animate-fadeIn">
+    <div class="space-y-6">
       <div class="flex items-center gap-3">
         <div class="w-12 h-[2px] bg-[#00b4d8]"></div>
         <h4
@@ -49,26 +20,26 @@
       </div>
 
       <h1
-        class="text-6xl md:text-7xl lg:text-8xl font-black text-[#003049] leading-[0.9] tracking-tighter"
+        class="text-5xl md:text-6xl lg:text-7xl font-black text-[#003049] leading-none tracking-tight"
       >
         EL AGUA MÁS <br />
-        <span class="text-slate-200 drop-shadow-sm">PURA EN TU</span> <br />
+        <span class="text-[#00b4d8]">PURA EN TU</span> <br />
         <span
           class="text-transparent bg-clip-text bg-gradient-to-r from-[#003049] to-[#00b4d8]"
           >HOGAR</span
         >
       </h1>
 
-      <p class="text-slate-500 font-medium text-xl max-w-md leading-relaxed">
+      <p class="text-slate-600 font-medium text-lg max-w-md leading-relaxed pt-4">
         Llevamos frescura y salud a cada rincón con nuestro sistema de
-        purificación de 7 etapas. <span class="block mt-3 text-[#00b4d8] font-bold">¡Hacemos repartos en todo Toluca!</span>
+        purificación de 7 etapas. <span class="block mt-2 text-[#00b4d8] font-bold">¡Hacemos repartos en todo Toluca!</span>
       </p>
 
       <!-- CTA Buttons -->
-      <div class="flex flex-wrap items-center gap-6 pt-4">
+      <div class="flex flex-wrap items-center gap-6 pt-6">
         <a
           href="#contact"
-          class="px-10 py-5 bg-[#003049] text-white font-black uppercase tracking-widest text-sm rounded-full hover:bg-[#00b4d8] hover:shadow-[0_20px_40px_rgba(0,48,73,0.3)] transition-all duration-500"
+          class="px-8 py-4 bg-[#003049] text-white font-black uppercase tracking-widest text-sm rounded-full hover:bg-[#00b4d8] hover:shadow-xl transition-all duration-300"
         >
           Hacer Pedido
         </a>
@@ -98,7 +69,7 @@
 
     <!-- Bottom Status / Location Labels -->
     <div
-      class="absolute bottom-12 left-8 sm:left-16 lg:left-24 xl:left-40 right-12 flex items-end justify-between"
+      class="absolute bottom-8 left-8 sm:left-12 lg:left-20 xl:left-32 flex items-end justify-between z-20"
     >
       <div
         class="flex flex-wrap gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-300"
@@ -116,41 +87,18 @@
 
   <!-- RIGHT VISUAL SIDE (THE CIRCLE) -->
   <div
-    class="relative w-full md:w-[50%] lg:w-[55%] min-h-[40vh] md:h-screen bg-white"
+    class="relative w-full md:w-[50%] lg:w-[55%] min-h-[40vh] md:min-h-screen bg-white"
   >
     <!-- PERFECT CIRCULAR ARC CONTAINER -->
     <div class="absolute inset-0 overflow-hidden bg-white">
       <!-- The Giant Circle that creates the arc -->
       <div
-        class="absolute top-1/2 left-0 -translate-y-1/2 w-[160vh] h-[160vh] bg-[#003049] rounded-full shadow-[-40px_0_100px_rgba(0,0,0,0.2)] overflow-hidden"
+        class="absolute top-1/2 left-0 -translate-y-1/2 w-[120vh] h-[120vh] bg-[#003049] rounded-full shadow-[-20px_0_60px_rgba(0,0,0,0.15)] overflow-hidden"
       >
-        <!-- Video content inside the circle -->
-        <div class="absolute inset-0 bg-slate-900">
-          <video
-            bind:this={v1_el}
-            src={videos[0]}
-            onended={handleEnded1}
-            autoplay
-            muted
-            playsinline
-            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 {activeIndex ===
-            0
-              ? 'opacity-100'
-              : 'opacity-0'}"
-          ></video>
-          <video
-            bind:this={v2_el}
-            src={videos[1]}
-            onended={handleEnded2}
-            muted
-            playsinline
-            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 {activeIndex ===
-            1
-              ? 'opacity-100'
-              : 'opacity-0'}"
-          ></video>
+        <!-- Background content inside the circle -->
+        <div class="absolute inset-0 bg-[#003049]">
           <div
-            class="absolute inset-0 bg-gradient-to-l from-transparent via-[#003049]/20 to-[#003049]/60"
+            class="absolute inset-0 bg-gradient-to-br from-[#00b4d8]/30 to-transparent"
           ></div>
         </div>
       </div>
@@ -160,10 +108,10 @@
     <div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-30">
       <!-- Decorative Outer Rings for Superposition -->
       <div
-        class="absolute inset-0 scale-[1.4] bg-[#00b4d8]/10 rounded-full blur-2xl animate-pulse"
+        class="absolute inset-0 scale-[1.3] bg-[#00b4d8]/10 rounded-full blur-xl animate-pulse"
       ></div>
       <div
-        class="absolute inset-0 scale-[1.2] border-2 border-[#00b4d8]/20 rounded-full"
+        class="absolute inset-0 scale-[1.1] border-2 border-[#00b4d8]/30 rounded-full"
       ></div>
 
       <button
@@ -171,22 +119,22 @@
           document
             .getElementById("contact")
             ?.scrollIntoView({ behavior: "smooth" })}
-        class="relative w-32 h-32 lg:w-40 lg:h-40 bg-[#00b4d8] rounded-full shadow-[0_30px_60px_rgba(0,180,216,0.6)] flex items-center justify-center group hover:scale-110 transition-all duration-700 border-[12px] border-white active:scale-95 overflow-hidden"
+        class="relative w-24 h-24 lg:w-32 lg:h-32 bg-[#00b4d8] rounded-full shadow-2xl flex items-center justify-center group hover:scale-110 transition-all duration-500 border-[8px] border-white active:scale-95 overflow-hidden"
       >
         <!-- Glass Shine Effect -->
         <div
-          class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent pointer-events-none"
+          class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/40 to-transparent pointer-events-none"
         ></div>
 
         <div
           class="flex flex-col items-center group-hover:rotate-12 transition-transform relative z-10"
         >
           <span
-            class="text-white font-black italic tracking-tighter text-3xl lg:text-4xl leading-none"
+            class="text-white font-black italic tracking-tighter text-2xl lg:text-3xl leading-none"
             >PIDE</span
           >
           <span
-            class="text-white/80 font-bold uppercase tracking-[0.2em] text-[10px] mt-1"
+            class="text-white/90 font-bold uppercase tracking-[0.2em] text-[8px] mt-1"
             >Ahora</span
           >
         </div>
