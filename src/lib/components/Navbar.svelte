@@ -13,7 +13,7 @@
 
 <nav
   class="fixed top-0 left-0 w-full z-[60] transition-all duration-700 {scrolled
-    ? 'bg-[#003049]/95 backdrop-blur-xl py-3 shadow-sm'
+    ? 'bg-[#003049]/50 backdrop-blur-xl py-3 shadow-sm'
     : 'bg-transparent py-8 border-b border-transparent'} lg:px-16 px-6"
 >
   <div class="max-w-[1800px] mx-auto flex justify-between items-center">

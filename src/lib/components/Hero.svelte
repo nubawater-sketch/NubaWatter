@@ -1,5 +1,3 @@
-
-
 <section
   id="hero"
   class="relative min-h-screen w-full bg-white flex flex-col md:flex-row overflow-hidden"
@@ -30,9 +28,14 @@
         >
       </h1>
 
-      <p class="text-slate-600 font-medium text-lg max-w-md leading-relaxed pt-4">
+      <p
+        class="text-slate-600 font-medium text-lg max-w-md leading-relaxed pt-4"
+      >
         Llevamos frescura y salud a cada rincón con nuestro sistema de
-        purificación de 7 etapas. <span class="block mt-2 text-[#00b4d8] font-bold">¡Hacemos repartos en todo Toluca!</span>
+        purificación de 7 etapas. <span
+          class="block mt-2 text-[#00b4d8] font-bold"
+          >¡Hacemos repartos en todo Toluca!</span
+        >
       </p>
 
       <!-- CTA Buttons -->
@@ -74,7 +77,12 @@
       <div
         class="flex flex-wrap gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-300"
       >
-        <a href="https://www.google.com/maps?q=19%C2%B015'24.6%22N+99%C2%B033'21.3%22W" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-3 group cursor-pointer">
+        <a
+          href="https://www.google.com/maps?q=19%C2%B015'24.6%22N+99%C2%B033'21.3%22W"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-col gap-3 group cursor-pointer"
+        >
           <span
             class="text-slate-900 group-hover:text-[#00b4d8] transition-colors"
             >Nuestra Ubicación</span
@@ -93,7 +101,7 @@
     <div class="absolute inset-0 overflow-hidden bg-white">
       <!-- The Giant Circle that creates the arc -->
       <div
-        class="absolute top-1/2 left-0 -translate-y-1/2 w-[120vh] h-[120vh] bg-[#003049] rounded-full shadow-[-20px_0_60px_rgba(0,0,0,0.15)] overflow-hidden"
+        class="absolute top-0 md:top-1/2 left-0 translate-y-0 md:-translate-y-1/2 w-full h-full md:w-[120vh] md:h-[120vh] bg-[#003049] rounded-none md:rounded-full shadow-none md:shadow-[-20px_0_60px_rgba(0,0,0,0.15)] overflow-hidden"
       >
         <!-- Background content inside the circle -->
         <div class="absolute inset-0 bg-[#003049]">
@@ -104,45 +112,27 @@
       </div>
     </div>
 
-    <!-- Floating Circular "PIDE" Button with SUPERPOSITION Effect -->
-    <div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-30">
-      <!-- Decorative Outer Rings for Superposition -->
-      <div
-        class="absolute inset-0 scale-[1.3] bg-[#00b4d8]/10 rounded-full blur-xl animate-pulse"
-      ></div>
-      <div
-        class="absolute inset-0 scale-[1.1] border-2 border-[#00b4d8]/30 rounded-full"
-      ></div>
-
+    <!-- Floating Circular "PIDE" Button -->
+    <div
+      class="absolute left-1/2 top-0 md:left-0 md:top-1/2 -translate-y-1/2 -translate-x-1/2 z-30"
+    >
       <button
         onclick={() =>
           document
             .getElementById("contact")
             ?.scrollIntoView({ behavior: "smooth" })}
-        class="relative w-24 h-24 lg:w-32 lg:h-32 bg-[#00b4d8] rounded-full shadow-2xl flex items-center justify-center group hover:scale-110 transition-all duration-500 border-[8px] border-white active:scale-95 overflow-hidden"
+        class="relative w-24 h-24 lg:w-32 lg:h-32 bg-[#00b4d8] rounded-full shadow-xl flex items-center justify-center group hover:bg-[#003049] transition-all duration-500 border-4 border-white active:scale-95"
       >
-        <!-- Glass Shine Effect -->
-        <div
-          class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/40 to-transparent pointer-events-none"
-        ></div>
-
-        <div
-          class="flex flex-col items-center group-hover:rotate-12 transition-transform relative z-10"
-        >
+        <div class="flex flex-col items-center transition-transform relative z-10">
           <span
-            class="text-white font-black italic tracking-tighter text-2xl lg:text-3xl leading-none"
+            class="text-white font-black tracking-tight text-xl lg:text-2xl leading-none"
             >PIDE</span
           >
           <span
-            class="text-white/90 font-bold uppercase tracking-[0.2em] text-[8px] mt-1"
+            class="text-white/90 font-bold uppercase tracking-[0.2em] text-[10px] mt-1"
             >Ahora</span
           >
         </div>
-
-        <!-- Inner glow -->
-        <div
-          class="absolute inset-0 rounded-full shadow-[inset_0_0_20px_rgba(255,255,255,0.4)]"
-        ></div>
       </button>
     </div>
 
